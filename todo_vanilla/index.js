@@ -97,6 +97,8 @@ function handleSubmitButton() {
   console.log(inputValue);
   todoElement.setAttribute("value", inputValue);
   todoElement.setAttribute("class", "todoitems");
+  todoElement.style.height = "50px";
+  todoElement.style.marginLeft = "30px";
   //   todoElement.style.width = `${widthToBeAddedForToDoItem}px`;
   todoElement.setAttribute("id", randomId);
   //   todoElement.setAttribute("readonly", "true");
