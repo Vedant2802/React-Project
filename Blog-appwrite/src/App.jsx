@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import authService from "./appwrite/auth";
 import conf from "./conf/conf";
-import { login } from "./store/authSlice";
+import { login, logout } from "./store/authSlice";
+import { Header, Footer } from "./components/index";
 
 function App() {
   // This will work only if you created you application using Create React App
@@ -17,11 +18,25 @@ function App() {
     authService
       .getCurrentUser()
       .then((userData) => {
-        dispatch(login({ userData }));
+        if (userData) {
+          dispatch(login({ userData }));
+        } else {
+          dispatch(logout());
+        }
       })
-      .finally();
+      .finally(() => {
+        setLoading(false);
+      });
   });
-  return <h1>A Blog in Appwrite</h1>;
+  return !loading ? (
+    <div className="min-h-screen flex flex-wrap bg-amber-200">
+      <div className="w-full block">
+        <Header />
+
+        <Footer />
+      </div>
+    </div>
+  ) : null;
 }
 
 export default App;
