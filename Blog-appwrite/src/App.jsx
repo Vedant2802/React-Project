@@ -29,7 +29,7 @@ function App() {
       });
   });
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap bg-amber-200">
+    <div className="min-h-screen flex flex-wrap bg-amber-200 border rounded-2xl border-transparent">
       <div className="w-full block">
         <Header />
 

@@ -41,12 +41,16 @@ export class AuthService {
 
   async getCurrentUser() {
     try {
-      await this.account.get();
+      const user = await this.account.get();
+      return user; // Return the user object here
     } catch (error) {
-      throw error;
+      // You can check for 401 and return null or rethrow
+      if (error.code === 401) {
+        // No valid session, user not logged in
+        return null;
+      }
+      throw error; // Other errors can be rethrown
     }
-
-    return null;
   }
 
   async logout() {
