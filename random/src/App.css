@@ -1,0 +1,23 @@
+.select {
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 12px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.data {
+  margin-top: 20px;
+  border: 2px solid black;
+  width: 300px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
