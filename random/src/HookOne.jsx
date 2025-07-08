@@ -10,20 +10,38 @@
 
 // export default useHookOne;
 
-import { useRef } from "react";
+// import { useRef } from "react";
 
-const useHookOne = (idealScreenObj) => {
-  //   const initialRef = useRef(data);
-  //   const current = data;
+// const useHookOne = (idealScreenObj) => {
+//   //   const initialRef = useRef(data);
+//   //   const current = data;
 
-  if (idealScreenObj) {
-    idealScreenObj.current = useRef({
-      isZapping: true,
-      name: "Akshat",
-      last: "Vedant",
-    });
-  }
-  return [idealScreenObj];
+//   if (idealScreenObj) {
+//     idealScreenObj.current = {
+//       isZapping: true,
+//       name: "Akshat",
+//       last: "Vedant",
+//     };
+//   }
+//   return [idealScreenObj];
+// };
+
+// export default useHookOne;
+
+import { useEffect } from "react";
+
+const useHookOne = (setIdealScreenObj) => {
+  useEffect(() => {
+    if (setIdealScreenObj) {
+      setIdealScreenObj({
+        isZapping: true,
+        name: "Akshat",
+        last: "Vedant",
+      });
+    }
+  }, [setIdealScreenObj]);
+
+  return null; // or nothing
 };
 
 export default useHookOne;
