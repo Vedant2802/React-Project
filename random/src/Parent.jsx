@@ -7,7 +7,7 @@ function Parent() {
   //   const idealScreenObj = useRef({});
   const [idealScreenObj, setIdealScreenObj] = useState({});
 
-  const data = [1, 2, 3, 4, 5];
+  // const data = [1, 2, 3, 4, 5];
   const [data2] = useHookTwo(idealScreenObj);
   //   const [a, b] = useHookOne(idealScreenObj);
   //   const [a, b] = useHookOne(setIdealScreenObj);
