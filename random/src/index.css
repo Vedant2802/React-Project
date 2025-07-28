@@ -74,3 +74,23 @@ button:focus-visible {
   height: 100vh;
   flex-direction: column;
 }
+
+.parent {
+  border: 1px solid black;
+  border-radius: 12px;
+  height: 1000px;
+  width: 1800px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.children {
+  border: 1px solid black;
+  border-radius: 12px;
+  height: 720px;
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
